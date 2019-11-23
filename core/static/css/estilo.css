@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+
+
+
+
+
+.cont{
+    width: 100%;
+    background:gainsboro;
+}
+
+.contenido-principal{
+    background:  white;
+    justify-content: center;
+    
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-bottom: 500px;
+}
+
+
+
+    .group-card{
+    
+    display: flexbox;
+    justify-content: center;
+   
+    
+   
+    }
+    .card{
+    
+        box-shadow: 25px 24px 20px -4px rgba(0,0,0,0.75);
+        border: 1px solid black;
+        display: flex;
+        margin-top: 150px;
+        background: white;
+        border-radius: 10px;
+        height: 400px;
+        margin: 20px;
+    
+    }
+    .card-img{
+        padding: 5px;
+        margin: auto;
+        height: 230px;
+     
+        }
+        .btn{
+    
+            background: #31d11b;
+            
+        }
+        .card:hover{
+            background:  #97ff82;
+        
+        }
+
+
+
+
+        
+    .page-footer{
+        
+        background: grey;
+        bottom: 0%;
+
+    }
+
+
+    @media (min-width: 768px) {
+.carousel-multi-item-2 .col-md-3 {
+float: left;
+width: 25%;
+max-width: 100%; } }
+
+.carousel-multi-item-2 .card img {
+border-radius: 2px; }
+
+@media (min-width: 600px) {
+    .nav-menu{
+        color: blue;
+        display: none
+        
+    }
+    body{
+        background: white;
+    }
+    
+ 
+     
+   
+     }
+     
+@media (max-width: 600px) {
+    .logo{
+        display: none;
+    }
+    .carousel{
+        display: none;  
+    }
+
+
+
+
+
+  
+     }
+     

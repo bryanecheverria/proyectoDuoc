@@ -1,0 +1,15 @@
+
+
+    <form action="" method="POST">
+        {%csrf_token%}
+        
+        <table>
+                {{form.as_table}}
+                
+        </table>
+        <input type="submit" name="" id="">
+
+
+    </form>
+    
+    <a href="{% url 'social:begin' 'facebook' %}">Iniciar con facebook</a>

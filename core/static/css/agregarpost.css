@@ -1,0 +1,29 @@
+.content{
+    background:  white;
+    justify-content: center;
+    
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-bottom: 500px;
+   
+}
+
+
+
+.form-post{
+     margin-top: 500px;
+     height: 400px;
+    width: 400px;
+    display: flexbox;
+    flex-direction: column;
+    
+ 
+   background: chartreuse;
+    padding: 10px;
+    margin: auto;
+}
+.col{
+    
+    margin: 5px;
+    width: 400px;
+}

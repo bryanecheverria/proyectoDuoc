@@ -1,0 +1,28 @@
+{%extends 'core/inicio.html'%}
+
+{% block  contenido %}
+<div class="content">
+   
+        {%for p in post %}
+                <div class="card  col-xs-2 col-md-3"  style="width: 18rem;">
+                        {%if p.imagen  %}
+                        <img  src="{{ p.imagen.url }}" class="" width="200px"  height="300px"  class="card-img-top" alt="...">
+                        {% endif %}    
+                        <div class="card-body">
+                           
+                          <h5 class="card-title">{{p.titulo}}</h5>
+                          <h5 class="card-title">{{p.valor}}</h5>     
+                          <p class="card-text">{{p.descripcion}}</p>
+                          <a target="a_blank" href="{%url 'post'%}" class="btn btn-primary">Reservar</a>
+                        </div>
+                 </div>
+
+        {%endfor%}
+
+
+
+
+
+
+</div>
+{% endblock contenido  %}

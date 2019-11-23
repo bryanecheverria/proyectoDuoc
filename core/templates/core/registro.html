@@ -1,0 +1,47 @@
+  {% extends "core/inicio.html" %}
+
+  
+
+     {%block titulo%}
+      <title>Registro</title>
+   
+     {%endblock titulo%}
+              
+  
+  
+
+
+        {%block contenido%}
+        
+        <div class="content">
+         
+       
+       
+        <form action="" method="POST" id="reg-form" name="reg-form"  class="reg-form">
+            {% csrf_token %}
+                <h1 class="formulario-titulo">Registrate</h1>
+    
+                <input type="text" id="txtnombre"  name="txtnombre" placeholder="nombre" class="formulario-input" required >
+                <label for="" 
+                class="formulario-label">Nombre</label>
+    
+                <input type="text" id="txtcorreo"  name="txtcorreo" placeholder="correo electronico" class="formulario-input "required>
+                <label for="" 
+                class="formulario-label">Correo</label>
+                
+                <input type="password" id="txtpassword"   name="txtpassword" placeholder="contraseña" class="formulario-input "required email>
+                <label for="" 
+                class="formulario-label">contraseña</label>
+    
+                
+                <input type="submit" value="validar" id ="validar" class="formulario-submit" onclick="validar">
+    
+                
+            </form>
+    
+           </div>
+      
+        
+
+    
+        {%endblock contenido%}

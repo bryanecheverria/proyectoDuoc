@@ -1,0 +1,43 @@
+{%extends 'core/inicio.html' %}
+
+
+
+
+{%block contenido%}
+<div class="content">
+
+        <form action="" method="POST" enctype="multipart/form-data"  class=" form-post row  form ">
+                {% csrf_token %}
+                  <div class="col ">
+                   
+                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" placeholder="Titulo">
+                  </div>
+                  <div class="col">
+                    <input type="text" name="txt_valor"   id="txt_valor" class="form-control" placeholder="valor arriendo">
+                  </div>
+                   <div class="col">
+                    <input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control" placeholder="descripcion">
+                    <br>
+                    <br>
+                    <label for="" >Imagen</label>
+                    <input type="file" name="txt_imagen" id="txt_imagen">
+
+                   
+                    <input type="submit" name="txt_boton" id="txt_boton">
+                    <br>
+                    <br>
+                  </div>
+
+              
+                
+                      
+
+              </form>
+
+</div>
+
+
+
+
+
+{%endblock contenido%}
