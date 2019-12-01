@@ -3,6 +3,7 @@ from .models import  UpdatePost
 from .form  import UserCustomForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth  import login, authenticate
+from django.contrib import messages
 # Create your views here.
 
 
@@ -40,11 +41,6 @@ def agregarPost(request):
 
 
 
-
-
-
-
-
 def crearLogin(request):
     data={ 'form':UserCustomForm()}
 
@@ -62,7 +58,79 @@ def crearLogin(request):
     return render(request, 'registration/registrar.html',data)
 
 def post(request):
-    return render(request,'core/post.html')
+
+
+    post =UpdatePost.objects.all()
+    variable ={'post':post}
+
+    return render(request,'core/post.html', variable)
+
+
+
+
+  
+
+    return render(request,'core/modicarPost.html')
+
+
+def eliminarPost(request,id):
+
+    post = UpdatePost.objects.get(id=id)
+
+    
+    try:
+        post.delete()
+        mensaje="eliminado correctamente"
+        messages.success(request, mensaje)
+    except:
+        mensaje="no se pudo eliminar correctamente"
+        messages.error(request,mensaje)
+
+        
+    return  redirect('core/listar_post.html')
+
+
+def Modificar(request):
+        
+        post = UpdatePost.objects.all()
+
+        variable= {'post':post }
+   
+        return render(request,'core/listar_post.html',variable)
+
+
+
+def modificarPost(request,id):
+    post = UpdatePost.objects.get(id=id)
+    variable ={ 'post':post}
+    if request.POST:
+            post.titulo =  request.POST.get('txt_titulo')
+            post.valor = request.POST.get('txt_valor')
+            post.descripcion= request.POST.get('txt_descripcion')
+            post.imagen = request.FILES.get('txt_imagen')
+            post.save()
+
+        
+    
+    
+
+    return render(request,'core/modificar_post.html',variable)
+
+
+
+    
+     
+
+
+    
+      
+
+
+        
+
+
+        
+
 
 
 

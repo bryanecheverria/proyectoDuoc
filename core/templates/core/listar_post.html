@@ -3,21 +3,52 @@
 {% block  contenido %}
 <div class="content">
    
-        {%for p in post %}
-                <div class="card  col-xs-2 col-md-3"  style="width: 18rem;">
-                        {%if p.imagen  %}
-                        <img  src="{{ p.imagen.url }}" class="" width="200px"  height="300px"  class="card-img-top" alt="...">
-                        {% endif %}    
-                        <div class="card-body">
-                           
-                          <h5 class="card-title">{{p.titulo}}</h5>
-                          <h5 class="card-title">{{p.valor}}</h5>     
-                          <p class="card-text">{{p.descripcion}}</p>
-                          <a target="a_blank" href="{%url 'post'%}" class="btn btn-primary">Reservar</a>
-                        </div>
-                 </div>
+        <table class="table">
+          
+            <tr>
+               <th>Titulo</th>
+               <th>valor</th>
+               <th>descripcion</th> 
+               <th>imagen</th> 
+               <th>opcion</th>   
+               
 
-        {%endfor%}
+            </tr>    
+
+            <tr>
+                  {%for p in post%}
+                    <td>{{ p.titulo }}</td>
+                    <td>${{p.valor}}</td>
+                    <td>{{p.descripcion}}</td>
+                    <td>
+                    {%if p.imagen%}        
+                    <img src="{{ p.imagen.url }}" height="100px" width="100px" alt="">
+                    {% endif %}
+                    </td>
+                    <td>
+                            <a href="{% url 'eliminarPost' p.id %}"> eliminar</a>
+                            <br>
+                            <a href="{% url 'modificarPost' p.id %}">modificar</a>
+                            
+                    </td>
+                    
+                    
+                    
+            </tr>
+            {%endfor%}
+
+        </table>
+
+        {%if messages%}
+         {%for m in messages%}
+         <div>m</div>
+         {%endfor%}
+        {%endif%}
+
+
+
+
+
 
 
 

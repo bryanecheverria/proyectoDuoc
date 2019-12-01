@@ -54,6 +54,10 @@
               <li class="nav-item active">
                   <a class="nav-link" href="{%url 'agregarPost'%}">subir post <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{%url 'modificar'%}">Modificar post<span class="sr-only">(current)</span></a>
+                </li>
+            
           {%else%}
           <li class="nav-item">
               <a class="nav-link nav-1" href="{%url 'login' %}">Iniciar sesion</a>
@@ -70,39 +74,32 @@
     </nav>
     
 
-    {%block contenido%}
-    <div class="contenido-principal">
-      
-      <div class="group-card  row   around-xs ">
+{% block  contenido %}
+<div class="content row ">
    
-       
-          {%for p in post %}
-          <div class="card  col-xs-2 col-md-3"  style="width: 18rem;">
-                  {%if p.imagen   %}
-                  <img class="{{ p.imagen.url }}"  height="300px"  src="" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    {% endif %}      
-                    <h5 class="card-title">{{p.titulo}}</h5>
-                    <h5 class="card-title">{{p.valor}}</h5>     
-                    <p class="card-text">{{p.descripcion}}</p>
-                    <a target="a_blank" href="{%url 'post'%}" class="btn btn-primary">Reservar</a>
-                  </div>
-           </div>
+        {%for p in post %}
+                <div class="card center-xs  col-xs-2 col-md-3"  style="width: 18rem;">
+                        {%if p.imagen  %}
+                        <img  src="{{ p.imagen.url }}" class="" width="200x"  height="100px"  class="card-img-top" alt="...">
+                        {% endif %}    
+                        <div class="card-body">
+                           
+                          <h5 class="card-title">{{p.titulo}}</h5>
+                          <h5 class="card-title">${{p.valor}}</h5>     
+                          <p class="card-text">{{p.descripcion}}</p>
+                          <a target="a_blank" href="{%url 'post'%}" class="btn btn-primary">Reservar</a>
+                        </div>
+                 </div>
 
-  {%endfor%}
-
-      
-            </div>
-      
-
-    </div>
+        {%endfor%}
 
 
-    {% endblock contenido  %}
-
-    
 
 
+
+
+</div>
+{% endblock contenido  %}
     
 
      

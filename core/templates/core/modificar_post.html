@@ -1,5 +1,4 @@
-{%extends 'core/inicio.html' %}
-
+{% extends 'core/inicio.html'%}
 
 
 
@@ -10,18 +9,21 @@
                 {% csrf_token %}
                   <div class="col ">
                     
-                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" placeholder="Titulo">
+                   
+                    <input type="hidden" name="txt_id" id="txt_id" value="{{p.id}}">
+                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" value="{{p.titulo}}">
                   </div>
                   <div class="col">
-                    <input type="text" name="txt_valor"   id="txt_valor" class="form-control" placeholder="valor arriendo">
+                    <input type="text" name="txt_valor"   id="txt_valor" class="form-control" value="{{p.valor}}" >
                   </div>
                    <div class="col">
-                    <input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control" placeholder="descripcion">
+                    <input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control" 
+                     value="{{p.valor}}">
                     <br>
                     <br>
                     <label for="" >Imagen</label>
                     <input type="file" name="txt_imagen" id="txt_imagen">
-                   
+                 
 
                    
                     <input type="submit" name="txt_boton" id="txt_boton">
@@ -29,9 +31,7 @@
                     <br>
                   </div>
 
-              
-                
-                      
+  
 
               </form>
 
