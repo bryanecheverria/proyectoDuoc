@@ -38,7 +38,7 @@
          
          
           <li class="nav-item">
-            <a class="nav-link nav-1" href="#">Sobre nosotros</a>
+            <a class="nav-link nav-1" href="{%url 'inicio' %}">Home</a>
           </li>
           
           
@@ -79,8 +79,8 @@
    
         {%for p in post %}
                 <div class="card center-xs  col-xs-2 col-md-3"  style="width: 18rem;">
-                        {%if p.imagen  %}
-                        <img  src="{{ p.imagen.url }}" class="" width="200x"  height="100px"  class="card-img-top" alt="...">
+                        {%if p.imagen1  %}
+                        <img  src="{{ p.imagen1.url }}" class=""   height="100px"  class="card-img-top" alt="...">
                         {% endif %}    
                         <div class="card-body">
                            
@@ -100,12 +100,7 @@
 
 </div>
 {% endblock contenido  %}
-    
 
-     
-
-
-   
       <footer class="page-footer font-small blue">
 
           <!-- Copyright -->

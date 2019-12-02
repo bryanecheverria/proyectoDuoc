@@ -34,7 +34,9 @@ def agregarPost(request):
             post.titulo =  request.POST.get('txt_titulo')
             post.valor = request.POST.get('txt_valor')
             post.descripcion= request.POST.get('txt_descripcion')
-            post.imagen = request.FILES.get('txt_imagen')
+            post.imagen0 = request.FILES.get('txt_imagen0')
+            post.imagen1 = request.FILES.get('txt_imagen1')
+            post.imagen2 = request.FILES.get('txt_imagen2')
             
             try:
                 post.save()

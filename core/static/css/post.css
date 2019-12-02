@@ -3,13 +3,46 @@
 .content-descripcion{
     margin: auto;
     background:  #707b7c ;
-    margin-top: 50px;
     width: 300px;
     float: left;
-    border: 1px solid black;
-   
+    border: 2px solid black;
+    color: white;
+   height: 300px;
 
 }
+.contactoform{
+    display: flexbox;
+    
+    background: white;
+    margin-top: 50px;   
+    width: 90%;
+}
+.descrip-post{
+    
+    
+    margin-left: 5px;
+    height: 50px;
+    width: 500px;
+}
+.valor{
+    margin-top: 1px;
+    background: gainsboro;
+  
+    height: 30px;
+    width: 500px;
+}
+
+.descrip-post{
+    margin-top: 10px;
+    background: gainsboro;
+    
+    height: 50px;
+    width: 500px;
+}
+.titulo-post{
+    margin: 5px;
+}
+
 
 
 

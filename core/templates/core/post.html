@@ -8,20 +8,38 @@
 
     {% block contenido %}
 
-    <div class="content cont-post row">
+    <div class="content  cont-post row">
+      <!--
+        <div class="content-descripcion  col-xs-3 ">
+            <h3> titulo: {{post.titulo}}</h3> 
+             <h3>$ {{post.valor}}</h3> 
+             <p>Descripcion:{{post.descripcion}}</p>        
+         </div> -->
+        
+         
+    <div class="contactoform  row col-xs-12">
 
-    <div id="carouselExampleControls" class="carousel carousel slide col-xs-8" data-ride="carousel">
+        
+      <div class="titulo-post  col-xs-12 ">
+        <h3>  {{post.titulo}}</h3> 
+      </div>
+    
+    <div id="carouselExampleControls" class="carousel center-xs slide col-xs-8" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                 {%if post.imagen  %}
-                <img class="d-block w-100" src="{{ post.imagen.url }}" height="300px"  alt="First slide">
+                 {%if post.imagen0  %}
+                <img class="d-block w-100" src="{{ post.imagen0.url }}" height="300px"  alt="First slide">
                  {% endif %}
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
+                  {%if post.imagen1  %}
+                <img class="d-block w-100" src="{{ post.imagen1.url }}" height="300px" alt="Second slide">
+                {% endif %}
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
+                  {%if post.imagen2  %}
+                <img class="d-block w-100" src="{{ post.imagen2.url }}" height="300px" alt="Third slide">
+                {% endif %}
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -33,18 +51,53 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+          <div class="content-descripcion  col-xs-3 ">
+            <br>
+            <h6>Contactar</h6>
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  <div class="col col-add ">
+          
+                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
+                  </div>
+                  <div class="col col-add ">
+          
+                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
+                  </div>
+                  <div class="col col-add ">
+          
+                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
+                  </div>
+                  <div class="col col-add ">
+          
+                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
+                  </div>
+                  <button type="submit" class="btn btn-primary">guardar</button>
 
-          <div class="content-descripcion  col-xs-10 ">
-                <h3> titulo: {{post.titulo}}</h3> 
-                 <h3>$ {{post.valor}}</h3> 
-                 <p>Descripcion:{{post.descripcion}}</p>       
-     
-     
-             </div>
-     
+
+                </form>
+              </div>
+           </div>
            
-
-
+           <div class="descrip-post row ">
+             
+            <div Class="col-xs-12" >
+                <p >Descripcion: <br>
+                  {{post.descripcion}}
+                  </p>
+            </div>
+            <div  Class="col-xs-12 valor" >
+              <h6> $ {{post.valor}}</h6>
+            </div>
+           
+              
+              
+           </div>
+          
+   
+        
+     
+            </div>
 
 
 

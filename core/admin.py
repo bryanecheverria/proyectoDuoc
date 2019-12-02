@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import  Post, UpdatePost
+from .models import UpdatePost,Consultar
 # Register your models here.
 
 
-admin.site.register(Post)
+admin.site.register(Consultar)
 admin.site.register(UpdatePost)

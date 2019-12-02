@@ -1,6 +1,7 @@
-.form-addPost{
-
-    display: flexbox;
-    justify-content: center;
-    background:gainsboro;
+.form-post{
+    margin: 30px;
+    width: 90%;
+}
+.col-add{
+    margin-top: 10px;
 }
