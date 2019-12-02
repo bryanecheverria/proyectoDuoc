@@ -1,35 +1,15 @@
-*{
+
+
+.content-descripcion{
     margin: auto;
+    background:  #707b7c ;
+    margin-top: 50px;
+    width: 300px;
+    float: left;
+    border: 1px solid black;
+   
+
 }
-
-
-
-
-.form{
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    background:gainsboro;
-    color: black;
-    height: 500px;
-    width:  500px;;
-    padding: 30px;  
-    box-shadow: 7px 10px 17px -3px rgba(0,0,0,0.75);
-    border-radius: 5px;
-    border: 1px solid black;    
-}
-.caja-txt{
-    width: 90%;
-}
-
-.a{
-    width: 80%;        
-}
- .btn{
-     margin-top: 20px;
- }
-
 
 
 

@@ -24,19 +24,25 @@ def home(request):
 
 @login_required
 def agregarPost(request):
-   
+ 
+        registro = UpdatePost.objects.all()
+        variable ={'registro':registro }
+
+       
         if request.POST:
             post = UpdatePost()
             post.titulo =  request.POST.get('txt_titulo')
             post.valor = request.POST.get('txt_valor')
             post.descripcion= request.POST.get('txt_descripcion')
             post.imagen = request.FILES.get('txt_imagen')
-            post.save()
-
-     
-
-
-        return render(request,'core/agregarpost.html')
+            
+            try:
+                post.save()
+                variable['mensaje']='guardado correctamente'
+            except:
+                  variable['mensaje']='no se ha podido  guardar'
+    
+        return render(request,'core/agregarpost.html', variable)
 
 
 
@@ -57,21 +63,10 @@ def crearLogin(request):
 
     return render(request, 'registration/registrar.html',data)
 
-def post(request):
+def post(request,id):
+    post =UpdatePost.objects.get(id=id)
 
-
-    post =UpdatePost.objects.all()
-    variable ={'post':post}
-
-    return render(request,'core/post.html', variable)
-
-
-
-
-  
-
-    return render(request,'core/modicarPost.html')
-
+    return render(request,'core/post.html',{'post':post})
 
 def eliminarPost(request,id):
 
@@ -109,7 +104,11 @@ def modificarPost(request,id):
             post.descripcion= request.POST.get('txt_descripcion')
             post.imagen = request.FILES.get('txt_imagen')
             post.save()
-
+            try:
+                post.save()
+                variable['mensaje']='se modifico correctamente'
+            except:
+                  variable['mensaje']='error al modificar'
         
     
     

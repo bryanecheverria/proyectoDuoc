@@ -1,15 +1,34 @@
+{% extends 'core/inicio.html'%}
 
-
-    <form action="" method="POST">
-        {%csrf_token%}
+{%block contenido%}
         
-        <table>
-                {{form.as_table}}
+                <div class="content center-xs row" >
+                                <form action="" method="POST" class="table">
+                                                {%csrf_token%}
+                                                
+                                            
+                                                        {{form.as_table}}
+                                                        
+                                                    <input type="submit" name="" id="">
+                                                
+                                        
+                                         
+                                            </form>
+                                        
+                                            <a href="{% url 'social:begin' 'facebook' %}">Iniciar con facebook</a>
+
+
+                </div>
+               
                 
-        </table>
-        <input type="submit" name="" id="">
+        
+   
+        
 
 
-    </form>
-    
-    <a href="{% url 'social:begin' 'facebook' %}">Iniciar con facebook</a>
+{%endblock contenido%}
+
+
+
+
+
