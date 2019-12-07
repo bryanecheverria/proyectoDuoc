@@ -12,7 +12,7 @@
       <link rel="stylesheet" href= " {%  static 'css/registro-form.css'  %}">
       <link rel="stylesheet" href= " {%  static 'css/post.css'  %}">
       <link rel="stylesheet" href= " {%  static 'css/agregarpost.css'  %}">
-      <link rel="stylesheet" href= " {%  static 'css/agregarpost.css' %}">
+    
      
        {%block titulo%}
       <title>Inicio</title>
@@ -75,29 +75,34 @@
     
 
 {% block  contenido %}
-<div class="content row ">
-   
+<div  class="content center-xs row col-xs "> <!-- cambie un row pra probar algo en el css y nose que era -->
         {%for p in post %}
-                <div class="card center-xs  col-xs-2 col-md-3"  style="width: 18rem;">
-                        {%if p.imagen1  %}
-                        <img  src="{{ p.imagen1.url }}" class=""   height="100px"  class="card-img-top" alt="...">
-                        {% endif %}    
-                        <div class="card-body">
-                           
-                          <h5 class="card-title">{{p.titulo}}</h5>
-                          <h5 class="card-title">${{p.valor}}</h5>     
-                          <p class="card-text">{{p.descripcion}}</p>
-                          <a target="a_blank" href="{%url 'post' p.id%}" class="btn-card btn btn-primary">Reservar</a>
-                        </div>
-                 </div>
 
+      
+    
+       
+                <div class="card center-xs col-xs-4"  style="width: 18rem;">
+                    <a target="a_blank" href="{%url 'post' p.id%}" >
+                    {%if p.imagen1  %}
+                    <img  src="{{ p.imagen1.url }}" class=""   height="100px"  class="card-img-top" alt="...">
+                    {% endif %}    
+                    <div class="card-body">
+                       
+                      <h5 class="card-title">{{p.titulo}}</h5>
+                      <h5 class="card-title">${{p.valor}}</h5>     
+                      <p class="card-text">{{p.descripcion}}</p>
+                      
+                      
+                      
+                    </div>
+                    
+          
+
+                  </a>    
+               </div>
+      
         {%endfor%}
-
-
-
-
-
-
+           
 </div>
 {% endblock contenido  %}
 

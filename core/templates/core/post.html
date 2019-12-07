@@ -21,7 +21,7 @@
 
         
       <div class="titulo-post  col-xs-12 ">
-        <h3>  {{post.titulo}}</h3> 
+        <h3 >  {{post.titulo}}</h3> 
       </div>
     
     <div id="carouselExampleControls" class="carousel center-xs slide col-xs-8" data-ride="carousel">
@@ -53,60 +53,65 @@
           </div>
           <div class="content-descripcion  col-xs-3 ">
             <br>
-            <h6>Contactar</h6>
+                <h6>Contactar</h6>
                 <form action="" method="POST">
                   {% csrf_token %}
+                
                   <div class="col col-add ">
           
-                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
+                    <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre" class="form-control" >
                   </div>
                   <div class="col col-add ">
           
-                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
+                    <input type="number" name="txt_celular" placeholder="Celular" id="txt_celular" class="form-control" >
                   </div>
                   <div class="col col-add ">
           
-                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
+                    <input type="email" name="txt_correo" id="txt_correo" placeholder="Correo" class="form-control" >
                   </div>
-                  <div class="col col-add ">
-          
-                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control" >
-                  </div>
-                  <button type="submit" class="btn btn-primary">guardar</button>
+                  
 
+                      <textarea  class="col col-add" name="txt_descripcion" placeholder="Escribe aquí tus comentarios"  id="txt_descripcion"  ></textarea>
+
+                   
+                      <div class="col col-add ">
+                          <input type="hidden" name="txt_id" id="txt_id" value="{{post.id}}" class="form-control" >
+    
+                      </div>
+          
+               
+                  <div class="col col-add ">
+                      <button type="submit" class="btn btn-primary btn-contactar ">Aceptar</button>
+
+                  </div>
+                 
+                </div>
 
                 </form>
               </div>
-           </div>
-           
-           <div class="descrip-post row ">
+
+              <div class="descrip-post row  col-xs-12  ">
              
-            <div Class="col-xs-12" >
-                <p >Descripcion: <br>
-                  {{post.descripcion}}
-                  </p>
-            </div>
-            <div  Class="col-xs-12 valor" >
-              <h6> $ {{post.valor}}</h6>
-            </div>
-           
-              
-              
+                  <div Class="col-xs-5 des-post " >
+                      <p >Descripcion: <br>
+                        {{post.descripcion}}
+                        </p>
+                    </div>
+                  <div class="col-xs-2 middle-xs des-post ">
+               
+                    <h6>  valor     </h6>
+                    <h6>${{post.valor}}</h6>
+             
+                  </div> 
+                    
+                 </div>
+               
            </div>
-          
-   
-        
+           
+      
      
-            </div>
 
-
-
-
-
-
-
-
-        </div>
+        
 
 
      

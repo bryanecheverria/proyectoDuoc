@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import  UpdatePost
+from .models import  UpdatePost,Consultar
 from .form  import UserCustomForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth  import login, authenticate
 from django.contrib import messages
+
+
 # Create your views here.
 
 
@@ -15,9 +17,6 @@ def home(request):
    
     return render(request,'core/inicio.html',variable)
     
-
-
-
 
 
 
@@ -67,8 +66,25 @@ def crearLogin(request):
 
 def post(request,id):
     post =UpdatePost.objects.get(id=id)
+    data={'post':post}
+   
 
-    return render(request,'core/post.html',{'post':post})
+    if request.POST:
+        formConsultar = Consultar()
+        formConsultar.nombre=request.POST.get('txt_nombre')
+        formConsultar.celular =request.POST.get('txt_celular')
+        formConsultar.correo=request.POST.get('txt_correo')
+        formConsultar.descripcion=request.POST.get('txt_descripcion')
+        formConsultar.post =request.POST.get('txt_id')
+      
+        try:
+            formConsultar.save()
+            data['mensaje']="solicitud enviada"
+        except:
+            data['mensaje']="Error "
+
+
+    return render(request,'core/post.html',data)
 
 def eliminarPost(request,id):
 
@@ -87,6 +103,8 @@ def eliminarPost(request,id):
     return  redirect('core/listar_post.html')
 
 
+
+
 def Modificar(request):
         
         post = UpdatePost.objects.all()
@@ -96,7 +114,7 @@ def Modificar(request):
         return render(request,'core/listar_post.html',variable)
 
 
-
+ 
 def modificarPost(request,id):
     post = UpdatePost.objects.get(id=id)
     variable ={ 'post':post}
@@ -111,11 +129,19 @@ def modificarPost(request,id):
                 variable['mensaje']='se modifico correctamente'
             except:
                   variable['mensaje']='error al modificar'
-        
     
+    return render(request,'core/modificar_post.html',variable)
+
+
+
+      
+
     
 
-    return render(request,'core/modificar_post.html',variable)
+
+
+
+
 
 
 

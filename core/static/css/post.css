@@ -1,51 +1,31 @@
+.cont-post{
+    padding-bottom: 300px;
+}
 
 
 .content-descripcion{
     margin: auto;
     background:  #707b7c ;
+    opacity: 90%;
     width: 300px;
     float: left;
-    border: 2px solid black;
+    border: 1px solid black;
     color: white;
-   height: 300px;
+    height: 350px;
 
 }
-.contactoform{
-    display: flexbox;
-    
-    background: white;
-    margin-top: 50px;   
-    width: 90%;
+
+
+a{
+    display: block;
+    text-decoration: none;
 }
 .descrip-post{
-    
-    
-    margin-left: 5px;
-    height: 50px;
-    width: 500px;
+ 
+    width: 400;
+    margin-left: 20px;
+    color:black;
 }
-.valor{
-    margin-top: 1px;
-    background: gainsboro;
-  
-    height: 30px;
-    width: 500px;
-}
-
-.descrip-post{
-    margin-top: 10px;
-    background: gainsboro;
-    
-    height: 50px;
-    width: 500px;
-}
-.titulo-post{
-    margin: 5px;
-}
-
-
-
-
 
 
 
