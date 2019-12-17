@@ -12,8 +12,57 @@
       <link rel="stylesheet" href= " {%  static 'css/registro-form.css'  %}">
       <link rel="stylesheet" href= " {%  static 'css/post.css'  %}">
       <link rel="stylesheet" href= " {%  static 'css/agregarpost.css'  %}">
-    
-     
+      {%load pwa%}
+      {%progressive_web_app_meta%}  
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyAlp-k19isX-H1ca5JY3ETIJnl3Nozrsu4",
+            authDomain: "cabanas-960af.firebaseapp.com",
+            databaseURL: "https://cabanas-960af.firebaseio.com",
+            projectId: "cabanas-960af",
+            storageBucket: "cabanas-960af.appspot.com",
+            messagingSenderId: "697270057166",
+            appId: "1:697270057166:web:8329c2f1c107e58225389f"
+          };
+          // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            let  messaging = firebase.menssaging();
+
+          // enlazar serviceworker
+            navigator.serviceWorker
+            .register('./serviceworker.js')
+            .then(function (register) {
+
+                messaging.useServiceWorker(register);
+
+
+                // Solicitar permisos para recibir notificaciones al usuario
+                messaging.requestPermission()
+                .then(function(){
+                console.log("usuario ha aceptado recibir notificaciones")
+                })
+                .catch(function(e){
+                console.log("el usuario no ha aceptado")
+                })
+
+            })
+
+        </script>
+      
+      
+
+
        {%block titulo%}
       <title>Inicio</title>
       {%endblock titulo%}

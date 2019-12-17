@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'social_django'
+    'social_django',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,4 @@ AUTHENTICATION_BACKENDS = (
 )
     
 
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR,'serviceworker.js')
